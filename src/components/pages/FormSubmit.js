@@ -83,7 +83,7 @@ export default function FormSubmit() {
 
   return (
     <FormContainer primaryColour={PrimaryColour}>
-      <StyledForm action="https://formsubmit.co/greyhoundcoding@gmail.com" method="POST">
+      <StyledForm action="https://formsubmit.co/donbingtran@gmail.com" method="POST">
         <FormHeading fontFamily={GlobalFont}>Get a FREE quote</FormHeading>
 
         <StyledInput type="text" name="name" placeholder="Name" required fontFamily={GlobalFont} primaryColour={PrimaryColour} />

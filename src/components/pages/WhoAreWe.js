@@ -71,7 +71,7 @@ const H3 = styled.h3`
 
 
 export default function WhoAreWe() {
-  const { GlobalFont } = useGlobals();
+  // const { GlobalFont } = useGlobals();
 
   return (
     <Parent>

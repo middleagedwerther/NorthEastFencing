@@ -8,6 +8,8 @@ import { faMapMarkerAlt, faEnvelope, faPhone, faClock } from '@fortawesome/free-
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 
+
+
 // Styled components
 const SocialIconsContainer = styled.div`
   display: grid;
@@ -15,6 +17,7 @@ grid-template-columns: auto auto;
 grid-template-rows: auto auto;
 align-items:center;
 justify-items:center;
+
 
 @media screen and (max-width: 861px) {
   display: flex;
@@ -24,6 +27,7 @@ align-items: center;
 gap: 20px;
 }
 
+
 @media screen and (max-width: 720px) {
     display: flex;
     flex-direction:row;
@@ -32,6 +36,8 @@ gap: 20px;
   gap: 20px;
   }
 `;
+
+
 
 
 const IconLink = styled.a`
@@ -59,6 +65,8 @@ const Container = styled.div`
 `;
 
 
+
+
 const LeftContainer = styled.div`
   display: grid;
   grid-template-rows: 20px 30px auto;
@@ -69,8 +77,11 @@ padding:0;
 margin:0;
   grid-template-rows: auto auto auto;
 
+
  }
 `;
+
+
 
 
 const MiddleContainer = styled.div`
@@ -78,9 +89,11 @@ const MiddleContainer = styled.div`
   grid-template-rows: 20px 30px auto;
   // background:blue;
 
+
   // gap: 10px;  
     @media screen and (max-width: 720px) {
       grid-template-rows: auto auto auto;
+
 
 // background:orange;
 padding:0;
@@ -88,17 +101,22 @@ margin:0;
 `;
 
 
+
+
 const RightContainer = styled.div`
   display: grid;
   grid-template-rows: 20px 30px auto;
-  // gap: 10px; 
+  // gap: 10px;
     @media screen and (max-width: 720px) {
       grid-template-rows: auto auto auto;
 
+
 // background:purple;
 padding:0;
-margin:0; 
+margin:0;
 `;
+
+
 
 
 const ContactGrid = styled.div`
@@ -109,9 +127,12 @@ const ContactGrid = styled.div`
   color: white;
     padding:0;
 
+
   gap: 5px;
   // background:red;
 `;
+
+
 
 
 const ContactGridItem = styled.div`
@@ -124,6 +145,8 @@ const ContactGridItem = styled.div`
 `;
 
 
+
+
 const ContactGridItemR = styled.div`
   display: flex;
   align-items: center;
@@ -132,6 +155,8 @@ const ContactGridItemR = styled.div`
   // padding: 5px;
   justify-content: flex-start; /* Align items to the left */
 `;
+
+
 
 
 const SuburbGrid = styled.div`
@@ -148,11 +173,15 @@ padding:0;
 `;
 
 
+
+
 const SuburbText = styled.div`
   font-family: ${props => props.globalFont};
-  color: ${props => props.PrimaryColour}; 
+  color: white;
   white-space: nowrap;
 `;
+
+
 
 
 const ServiceAreas = styled.div`
@@ -160,11 +189,10 @@ const ServiceAreas = styled.div`
   font-family: ${props => props.globalFont};
   font-weight: bold;
   display: flex;
-  color: ${props => props.PrimaryColour}; 
   align-items: center;
   margin-left: 20px;
   // margin-top: 9px;
-  // color: white;
+  color: white;
     @media screen and (max-width: 720px) {
 // background:red;
 padding-top:15px;
@@ -172,13 +200,12 @@ padding-top:15px;
 `;
 
 
+
+
 const Copyright = styled.div`
   font-family: ${props => props.globalFont};
   background-color: ${props => props.local};
-
   color: white;
-    color: ${props => props.PrimaryColour}; 
-
   display: flex;
   font-weight: thin;
   font-size: 15px;
@@ -187,17 +214,19 @@ const Copyright = styled.div`
 `;
 
 
+
+
 const Underlined = styled.div`
   font-family: ${props => props.globalFont};
   background-color: ${props => props.local};
   color: white;
-    color: ${props => props.PrimaryColour}; 
-
   display: flex;
   font-weight: thin;
   font-size: 15px;
   justify-content: center;
 `;
+
+
 
 
 const BottomContainer = styled.div`
@@ -207,14 +236,14 @@ const BottomContainer = styled.div`
 `;
 
 
+
+
 const OtherLinks = styled.div`
   font-family: ${props => props.globalFont};
   padding: 5px;
   background-color: ${props => props.local};
   // background:red;
   color: blue;
-    color: ${props => props.PrimaryColour}; 
-
   display: flex;
   font-weight: thin;
   font-size: 15px;
@@ -222,39 +251,24 @@ const OtherLinks = styled.div`
 `;
 
 
+
+
 const Divider = styled.span`
   height: 95%;
   width: 1px;
   background-color: white;
-    background-color: ${props => props.PrimaryColour}; 
-
   margin: 0 10px;
 `;
 
 
-// const ContactButton = styled.div`
-//   height: 20px;
-//   color: white;
-//   width: 50%;
-//   grid-column: 2;
-//   grid-row: 1;
-//   text-decoration: none;
-//   background-color: orange;
-//   margin: 0 10px;
-//   border-radius: 5px;
-//   margin-top: 12px;
-//   transition: background-color 0.1s ease;
-//   &:hover {
-//     background-color: darkorange;
-//   }
-// `;
+
+
+
 
 
 const TopRow = styled.div`
   text-decoration: none;
   color: white;
-    color: ${props => props.PrimaryColour}; 
-
   font-family: ${props => props.globalFont};
   // border: 1px solid white;
   // background:blue;
@@ -265,11 +279,12 @@ margin-top:-13px;
 `;
 
 
+
+
 const MiddleRow = styled.div`
   text-decoration: none;
   color: white;
-    color: ${props => props.PrimaryColour}; 
-
+ 
   // background:red;
   font-family: ${props => props.globalFont};
   // border: 1px solid white;
@@ -279,18 +294,24 @@ height:20px;
 `;
 
 
+
+
 const BottomRow = styled.div`
+
 
   text-decoration: none;
   color: white;
-    color: ${props => props.PrimaryColour}; 
-
   font-family: ${props => props.globalFont};
   // border: 1px solid white;
   // background:green;
   height:auto;
 
+
 `;
+
+
+
+
 
 
 
@@ -299,20 +320,18 @@ const Details = styled.div`
   font-family: ${props => props.globalFont};
   text-decoration: none;
   color: white;
-    color: ${props => props.PrimaryColour}; 
-
   margin-top: 3px;
   font-weight: 900;
   padding:0;
 `;
 
 
+
+
 const PhoneLink = styled.a`
   font-family: ${props => props.globalFont};
   text-decoration: none;
   color: white;
-    color: ${props => props.PrimaryColour}; 
-
   margin-bottom: 2px;
   font-weight: normal;
   &:hover {
@@ -321,12 +340,12 @@ const PhoneLink = styled.a`
 `;
 
 
+
+
 const EmailLink = styled(Link)`
   font-family: ${props => props.globalFont};
   text-decoration: none;
   color: white;
-    color: ${props => props.PrimaryColour}; 
-
   font-weight: normal;
   &:hover {
     text-decoration: underline;
@@ -334,17 +353,19 @@ const EmailLink = styled(Link)`
 `;
 
 
+
+
 const HorizontalDivider = styled.div`
   width: 95%;
   height: 1px; // Standard height
   background-color: white;
-    background-color: ${props => props.PrimaryColour}; 
-
   margin: 10px 10px; // Standard margin
   @media screen and (max-width: 720px) {
     display: none;
   }
 `;
+
+
 
 
 const ShrunkenDivider = styled.div`
@@ -353,13 +374,14 @@ const ShrunkenDivider = styled.div`
     display: block;
     width: 100%;
 
+
     height: 1px;
     background-color: white;
-      background-color: ${props => props.PrimaryColour}; 
-
     margin: 10px 0 -2px 0;
   }
 `;
+
+
 
 
 const ShrunkenWrapper = styled.div`
@@ -369,17 +391,19 @@ display:none;
 @media screen and (max-width: 720px) {
   display: block;
 
+
 `;
 
+
 const HorizontalDivider3 = styled.div`
-  width: 50%;
+  width: 100%;
   height: 1px;
   background-color: white;
-    background-color: ${props => props.PrimaryColour}; 
-
   margin-top: 0;
   justify-self: center;
 `;
+
+
 
 
 const IconWrapper = styled.div`
@@ -391,14 +415,16 @@ const IconWrapper = styled.div`
 `;
 
 
+
+
 const Spant = styled.span`
   font-family: ${props => props.globalFont};
   text-decoration: none;
   color: white;
-    color: ${props => props.PrimaryColour}; 
-
   font-weight: normal;
 `;
+
+
 
 
 const IconContainer = styled.div`
@@ -407,10 +433,13 @@ align-items:center;
 justify-content:center;
 `;
 
+
 export default function FooterWithColumns() {
   const { GlobalFont, PrimaryColour, SecondaryColour } = useGlobals();
   const [hoveredLink, setHoveredLink] = useState(null);
   const suburbRefs = useRef([]);
+
+const myColor = "#0056b3";
 
 
   const suburbs = [
@@ -419,28 +448,32 @@ export default function FooterWithColumns() {
   ];
 
 
+
+
   const linkStyleWithDecoration = (isHovered) => ({
     color: 'white',
-    color: {PrimaryColour},
-
     transform: isHovered ? 'scale(1.1)' : 'scale(1)',
     transition: 'transform 0.1s ease',
     textDecoration: 'underline',
   });
 
 
+
+
   const location = useLocation();
-  
+ 
+
 
   useEffect(() => {
     const homeLink = document.querySelector('.home-link');
-    
+   
     homeLink.addEventListener('click', function(event) {
       if (location.pathname === "/") {
         event.preventDefault();
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     });
+
 
     return () => {
       homeLink.removeEventListener('click', function(event) {
@@ -452,40 +485,45 @@ export default function FooterWithColumns() {
     };
   }, [location]);
 
+
   return (
     <>
-      <Container PrimaryColour={PrimaryColour} globalFont={GlobalFont} local="black">
+      <Container PrimaryColour={PrimaryColour} globalFont={GlobalFont} local={myColor}>
         <IconContainer>
         <IconWrapper>
-        <Link to='/' className="home-link" >
+        <Link to='/' className="home-link">
+
 
           <img src={Icon} alt="icon" />
           </Link>
 
+
         </IconWrapper>
+
 
         <ShrunkenWrapper>
           <ShrunkenDivider />
           </ShrunkenWrapper>
           </IconContainer>
 
+
         <LeftContainer>
           <TopRow globalFont={GlobalFont}>
-            <ServiceAreas globalFont={GlobalFont} PrimaryColour={PrimaryColour}>We service these areas</ServiceAreas>
+            <ServiceAreas globalFont={GlobalFont}>We service these areas</ServiceAreas>
           </TopRow>
          
          <MiddleRow>
          <HorizontalDivider />
          </MiddleRow>
 
+
          <BottomRow>
-          <SuburbGrid local="black">
+          <SuburbGrid local={myColor}>
             {suburbs.map((suburb, index) => (
               <SuburbText
                 key={index}
                 ref={el => (suburbRefs.current[index] = el)}
                 globalFont={GlobalFont}
-                PrimaryColour={PrimaryColour}
               >
                 {suburb}
               </SuburbText>
@@ -498,13 +536,17 @@ export default function FooterWithColumns() {
         </LeftContainer>
 
 
+
+
         <MiddleContainer>
-          <TopRow globalFont={GlobalFont} PrimaryColour={PrimaryColour}>
-            <ServiceAreas globalFont={GlobalFont} PrimaryColour={PrimaryColour}>
-              <Link to='/contact-us' style={{ textDecoration: 'none', color: 'white' }} PrimaryColour={PrimaryColour}>
+          <TopRow globalFont={GlobalFont}>
+            <ServiceAreas globalFont={GlobalFont}>
+              <Link to='/contact-us' style={{ textDecoration: 'none', color: 'white' }}>
                 Contact Us
               </Link>
             </ServiceAreas>
+
+
 
 
           </TopRow>
@@ -514,13 +556,15 @@ export default function FooterWithColumns() {
 </MiddleRow>
 
 
+
+
 <BottomRow>
           <ContactGrid>
             <ContactGridItem>
-              <FontAwesomeIcon icon={faPhone} PrimaryColour={PrimaryColour}/>
+              <FontAwesomeIcon icon={faPhone} />
             </ContactGridItem>
             <ContactGridItemR>
-              <PhoneLink href="tel:0412123456" globalFont={GlobalFont} PrimaryColour={PrimaryColour}>
+              <PhoneLink href="tel:0412123456" globalFont={GlobalFont}>
                 0412 123 456
               </PhoneLink>
             </ContactGridItemR>
@@ -528,7 +572,7 @@ export default function FooterWithColumns() {
               <FontAwesomeIcon icon={faEnvelope} />
             </ContactGridItem>
             <ContactGridItemR>
-              <EmailLink to='/contact-us' globalFont={GlobalFont} PrimaryColour={PrimaryColour}>
+              <EmailLink to='/contact-us' globalFont={GlobalFont}>
                 queries@fencing.com
               </EmailLink>
             </ContactGridItemR>
@@ -536,51 +580,58 @@ export default function FooterWithColumns() {
               <FontAwesomeIcon icon={faMapMarkerAlt} />
             </ContactGridItem>
             <ContactGridItemR>
-              <Details globalFont={GlobalFont} PrimaryColour={PrimaryColour}>
-                <Spant globalFont={GlobalFont} PrimaryColour={PrimaryColour}> 123 Fake Rd</Spant>
+              <Details globalFont={GlobalFont}>
+                <Spant globalFont={GlobalFont} > 123 Fake Rd</Spant>
                 <br/>
-                <Spant globalFont={GlobalFont} PrimaryColour={PrimaryColour} >  Suburb 3012</Spant>
+                <Spant globalFont={GlobalFont} >  Suburb 3012</Spant>
               </Details>
             </ContactGridItemR>
             <div><br/></div>
             <div><br/></div>
+
+
 
 
             <ContactGridItem>
               <FontAwesomeIcon icon={faClock} />
             </ContactGridItem>
             <ContactGridItemR>
-              <Details globalFont={GlobalFont} PrimaryColour={PrimaryColour}>
-                <Spant globalFont={GlobalFont} PrimaryColour={PrimaryColour}> Operating Hours</Spant>
+              <Details globalFont={GlobalFont}>
+                <Spant globalFont={GlobalFont}> Operating Hours</Spant>
                 <div style={{ marginLeft: '25px', marginBottom:"-5px" }}>
-                  <Spant globalFont={GlobalFont} PrimaryColour={PrimaryColour}>7am to 7pm</Spant>
+                  <Spant globalFont={GlobalFont}>7am to 7pm</Spant>
                 </div>
               </Details>
             </ContactGridItemR>
-            
+           
           </ContactGrid>
 
-          <ShrunkenWrapper>       
+
+          <ShrunkenWrapper>      
               <ShrunkenDivider />
           </ShrunkenWrapper>
  
           </BottomRow>
 
+
         </MiddleContainer>
+
+
 
 
         <RightContainer>
           <TopRow globalFont={GlobalFont}>
-            <ServiceAreas globalFont={GlobalFont} PrimaryColour={PrimaryColour}>Follow Us</ServiceAreas>
+            <ServiceAreas globalFont={GlobalFont}>Follow Us</ServiceAreas>
           </TopRow>
           <MiddleRow>
           <HorizontalDivider />
           </MiddleRow>
 
+
           <BottomRow>
-          <SocialIconsContainer PrimaryColour={PrimaryColour}>
-            <IconLink href="https://www.facebook.com" target="_blank" aria-label="Facebook" PrimaryColour={PrimaryColour}>
-              <FaFacebook PrimaryColour={PrimaryColour} />
+          <SocialIconsContainer>
+            <IconLink href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+              <FaFacebook />
             </IconLink>
             <IconLink href="https://www.twitter.com" target="_blank" aria-label="Twitter">
               <FaTwitter />
@@ -594,13 +645,15 @@ export default function FooterWithColumns() {
           </SocialIconsContainer>
           </BottomRow>
 
+
         </RightContainer>
       </Container>
 
+
       <BottomContainer>
         <HorizontalDivider3 />
-        <OtherLinks SecondaryColour={SecondaryColour} local="black">
-          <Copyright globalFont={GlobalFont} PrimaryColour={PrimaryColour}>
+        <OtherLinks SecondaryColour={SecondaryColour} local={myColor}>
+          <Copyright globalFont={GlobalFont}>
             Copyright © 2024 North East Fencing Pty Ltd.
           </Copyright>
           <Divider />
@@ -609,11 +662,10 @@ export default function FooterWithColumns() {
             target="_blank"
             rel="noopener noreferrer"
             style={linkStyleWithDecoration(hoveredLink === 'fences')}
-            PrimaryColour={PrimaryColour}
             onMouseEnter={() => setHoveredLink('fences')}
             onMouseLeave={() => setHoveredLink(null)}
           >
-            <Underlined globalFont={GlobalFont} PrimaryColour={PrimaryColour}>Fences Act 1968</Underlined>
+            <Underlined globalFont={GlobalFont}>Fences Act 1968</Underlined>
           </a>
           <Divider />
           <Link
@@ -622,15 +674,20 @@ export default function FooterWithColumns() {
             onMouseEnter={() => setHoveredLink('privacy')}
             onMouseLeave={() => setHoveredLink(null)}
             globalFont={GlobalFont}
-            PrimaryColour={PrimaryColour}
           >
-            <Underlined globalFont={GlobalFont} PrimaryColour={PrimaryColour}>Privacy Policy</Underlined>
+            <Underlined globalFont={GlobalFont}>Privacy Policy</Underlined>
           </Link>
         </OtherLinks>
       </BottomContainer>
     </>
   );
 }
+
+
+
+
+
+
 
 
 

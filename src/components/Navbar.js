@@ -46,7 +46,6 @@ const NavPhoneText = styled.div`
 
   &:hover {
     font-size: calc(100% + 50%);
-    color: blue;
   }
 `;
 
@@ -230,11 +229,6 @@ function Navbar() {
               Services <i className='fas fa-caret-down' />
             </NavLinks>
             {dropdown && <Dropdown />}
-          </NavItem>
-          <NavItem fontFamily={GlobalFont}>
-            <NavLinks to='/about-us' onClick={closeMobileMenu} fontFamily={GlobalFont}>
-              About Us
-            </NavLinks>
           </NavItem>
           <NavItem fontFamily={GlobalFont}>
             <NavLinks to='/contact-us' onClick={closeMobileMenu} fontFamily={GlobalFont}>

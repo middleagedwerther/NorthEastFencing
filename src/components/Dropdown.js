@@ -6,10 +6,7 @@ import { useGlobals } from '../Globals'
 
 function Dropdown() {
   const {
-    GlobalFont, setGlobalFont,
-    PrimaryColour, setPrimaryColour,
-    SecondaryColour, setSecondaryColour,
-    TertiaryColour, setTertiaryColour
+    GlobalFont
   } = useGlobals();
 
   const [click, setClick] = useState(false);

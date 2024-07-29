@@ -13,7 +13,7 @@ const data = [
     },
     {
       question: 'What if my neighbour wants a fence over and above what is deemed a standard for a sufficient dividing fence?',
-      answer: 'You are only required to contribute up to the cost of half of what is deemed the cost of a standard fence. If your neighbour wishes to erect a fence over and above this, they are responsible for the extra cost associated with that fence – Refer to the Victoria Fences Act for further details – Click here to view the Victoria Fences Act 2014 Amendment.',
+      answer: 'You are only required to contribute up to the cost of half of what is deemed the cost of a standard fence. If your neighbour wishes to erect a fence over and above this, they are responsible for the extra cost associated with that fence – Refer to the Victoria Fences Act for further details (link below).',
     },
     {question: "Do your fences come with a warranty?",
       answer:"Yes, our fences come with a 12-month warranty on workmanship.",

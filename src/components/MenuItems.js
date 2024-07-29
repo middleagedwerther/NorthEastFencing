@@ -13,10 +13,5 @@ export const MenuItems = [
     title: 'Iron',
     path: '/iron',
     cName: 'dropdown-link'
-  },
-  {
-    title: 'Development',
-    path: '/development',
-    cName: 'dropdown-link'
   }
 ];

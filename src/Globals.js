@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
 
-
 const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
@@ -10,22 +9,21 @@ export const GlobalProvider = ({ children }) => {
   const [PrimaryColour, setPrimaryColour] = useState("hsla(200, 86%, 40%, 1)");
   const [SecondaryColour, setSecondaryColour] = useState("hsla(226, 97%, 30%, 1)");
   const [TertiaryColour, setTertiaryColour] = useState("hsla(150, 86%, 40%, 1)");
-
-
- 
-  
-
+  const [SubheadingSize, setSubheadingSize] = useState("48px"); // Add state for subheading size
 
   return (
-    <GlobalContext.Provider value={{ number, setNumber, strang, setStrang, GlobalFont, setGlobalFont,
-      PrimaryColour, setPrimaryColour, SecondaryColour, setSecondaryColour, TertiaryColour, 
-      setTertiaryColour,
-     }}>
+    <GlobalContext.Provider value={{ 
+      number, setNumber, 
+      strang, setStrang, 
+      GlobalFont, setGlobalFont,
+      PrimaryColour, setPrimaryColour, 
+      SecondaryColour, setSecondaryColour, 
+      TertiaryColour, setTertiaryColour, 
+      SubheadingSize, setSubheadingSize // Include SubheadingSize in the context
+    }}>
       {children}
     </GlobalContext.Provider>
   );
 };
 
 export const useGlobals = () => useContext(GlobalContext);
-
-

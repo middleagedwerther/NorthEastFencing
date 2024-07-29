@@ -1,11 +1,10 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { useGlobals } from "../../Globals.js";
 import FooterWithColumns from "./FooterWithColumns.js";
 import WSPGallery from './Gallery2';
 
-import bkgrnd from "../../images/amerifence.png";
-import image1 from "../../images/img-1.jpg";
+import bkgrnd from "../../images/alumino.png";
 import holz1 from "../../images/alumino4.jpg";
 import holz2 from "../../images/aluminio7.jpg";
 import holz3 from "../../images/aluminio6.jpg";
@@ -23,33 +22,6 @@ import madera4 from "../../images/alumino13.png";
 import madera5 from "../../images/alumino14.jpg";
 
 
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`;
-
-const slideInFromLeft = keyframes`
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-`;
-
-const slideInFromRight = keyframes`
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-`;
-
 const Container = styled.div`
   position: relative;
   margin-top: 60px;
@@ -66,7 +38,7 @@ const Container = styled.div`
 
 const H1Wrapper = styled.span`
   display: inline-block;
-  // animation: ${slideInFromLeft} 1s ease-in-out;
+  z-index:1;
 `;
 
 const H1 = styled.h1`
@@ -87,7 +59,7 @@ const H1 = styled.h1`
 
 const H2Wrapper = styled.span`
   display: inline-block;
-  // animation: ${slideInFromRight} 1s ease-in-out;
+  z-index:1;
 `;
 
 const H2 = styled.h2`
@@ -116,13 +88,23 @@ const BackgroundImage = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   z-index: -1;
-  // animation: ${fadeIn} 2s ease-in-out;
 `;
 
-const GalleryContainer = styled.div`
+const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  // animation: ${fadeIn} 1.5s ease-in-out;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Adjust opacity and color as needed */
+  z-index: 0;
 `;
+
+
+const GalleryContainer = styled.div`
+  display: flex;          /* Enable Flexbox */
+  justify-content: center; /* Center children horizontally */
+  width: 100%;           /* Ensure the container takes full width */`;
 
 export default function Aluminium() {
   const { GlobalFont } = useGlobals();
@@ -151,6 +133,7 @@ export default function Aluminium() {
     <>
       <Container>
         <BackgroundImage />
+        <Overlay/>
         <H1Wrapper>
           <H1 globalFont={GlobalFont}>Aluminium Fences</H1>
         </H1Wrapper>

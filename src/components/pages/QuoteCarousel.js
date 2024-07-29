@@ -1,6 +1,22 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import './BodyText.css';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 import image1 from '../../images/image-daniel.jpg';
 import image2 from '../../images/image-jeanette.jpg';
@@ -9,7 +25,20 @@ import image4 from '../../images/image-kira.jpg';
 import quote from "../../images/quotemark.png";
 import { useGlobals } from "../../Globals.js";
 
+
+
+
+
+
+
+
 import styled from 'styled-components';
+
+
+
+
+
+
 
 
 const SectionHeading = styled.div`
@@ -19,15 +48,205 @@ const SectionHeading = styled.div`
   margin-top: 0;
   margin-bottom: 20px;
   text-align: center;
-  font-size: 30px;
-  color: ${(props) => props.PrimaryColour}; // Ensure the prop name matches
-  font-family: ${(props) => props.globalFont}; // Ensure the prop name matches
+  font-size: ${(props) => props.subheadingSize}; // Use SubheadingSize here
+  color: ${(props) => props.PrimaryColour};
+  font-family: ${(props) => props.globalFont};
 `;
+
+
+
+
+
+
+
+
+const Container = styled.div`
+  padding: 10px;
+  font-family: ${(props) => props.globalFont};
+`;
+
+
+
+
+
+
+
+
+const Box = styled.div`
+  color: white;
+  display: flex;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adjust values as needed */
+
+  flex-direction: column;
+  background-color: ${(props) => props.PrimaryColour};
+  text-align: center;
+  margin: 0 10px;
+  margin-bottom: 8px;
+  font-family: ${(props) => props.globalFont};
+  box-sizing: border-box;
+  border-radius: 15px;
+`;
+
+
+
+
+
+
+
+
+const QuoteBox = styled.div`
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-bottom: 3px;
+  text-align: left;
+  background: ${(props) => props.PrimaryColour};
+  border-radius: 15px 15px 0 0;
+`;
+
+
+
+
+
+
+
+
+const TextBox = styled.div`
+  font-size: 15px;
+  background: ${(props) => props.PrimaryColour};
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  font-family: ${(props) => props.GlobalFont};
+  // font-style: italic;
+  font-weight: normal;
+  text-align: left;
+
+
+
+
+    text-align: left;
+  font-size: 16px;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  min-height: ${(props) => props.maxHeight}px;
+  border-radius: 15px 15px 0 0;
+`;
+
+
+
+
+
+
+
+
+const ImageStyle = styled.img`
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(23%, -15%);
+`;
+
+
+
+
+
+
+
+
+const H4Style = styled.div`
+  grid-column: 2;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  height: 100%;
+  font-size: 13px;
+  text-align: center;
+  font-family: ${(props) => props.GlobalFont};
+  background: ${(props) => props.PrimaryColour};
+  font-weight: 100;
+  color: orange;
+  padding: 0;
+  box-sizing: border-box;
+`;
+
+
+
+
+
+
+
+
+const ImageBox = styled.div`
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  padding-bottom: 18px;
+  grid-template-columns: 79px auto;
+  grid-template-rows: 1;
+`;
+
+
+
+
+
+
+
+
+const ClientName = styled.p`
+  bottom: 0;
+  margin: 0;
+  font-size: 18px;
+  color: white;
+  padding: 0;
+  text-align: left;
+  align-self: flex-end;
+  background: ${(props) => props.PrimaryColour};
+`;
+
+
+
+
+
+
+
+
+const ClientSuburb = styled.p`
+  margin: 0;
+  padding: 0;
+  color: white;
+  text-align: left;
+  background: ${(props) => props.PrimaryColour};
+`;
+
+
+
+
+
+
+
 
 const QuoteCarousel = () => {
   const { GlobalFont, PrimaryColour } = useGlobals();
   const [maxHeight, setMaxHeight] = useState(0);
   const boxRefs = useRef([]);
+
+
+
+
+
+
+
 
   const responsive = {
     superLargeDesktop: {
@@ -39,14 +258,21 @@ const QuoteCarousel = () => {
       items: 3,
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
+      breakpoint: { max: 1024, min: 750 },
       items: 2,
     },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
+      breakpoint: { max: 750, min: 0 },
       items: 1,
     },
   };
+
+
+
+
+
+
+
 
   const calculateMaxHeight = () => {
     if (boxRefs.current.length > 0) {
@@ -56,18 +282,32 @@ const QuoteCarousel = () => {
     }
   };
 
+
+
+
+
+
+
+
   useEffect(() => {
     // Run initial height calculation
     calculateMaxHeight();
-    
+   
     // Recalculate heights on window resize
     const handleResize = () => calculateMaxHeight();
     window.addEventListener('resize', handleResize);
-    
+   
     return () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+
+
+
+
+
+
 
   useEffect(() => {
     // Run after every render to ensure heights are correct
@@ -76,185 +316,147 @@ const QuoteCarousel = () => {
     }, 100);
   });
 
-  const imageStyle = {
-    maxHeight: '100%',
-    maxWidth: '100%',
-    objectFit: 'cover',
-    display: 'block',
-    borderRadius: '50%',
-    position: 'absolute',
-    transform: 'translate(23%, -15%)',
-  };
 
-  const textStyle = {
-    fontSize: '15px',
-    background: PrimaryColour,
-    width: '100%',
-    height: 'auto',
-    objectFit: 'cover',
-    fontFamily: GlobalFont,
-    fontStyle: 'italic',
-    fontWeight: 'normal',
-    textAlign: 'left',
-    paddingBottom: '20px',
-    paddingRight: '20px',
-    paddingLeft: '20px',
-    boxSizing: 'border-box',
-    minHeight: `${maxHeight}px`,
-    borderRadius: '15px 15px 0 0', // Rounded corners for the top of the text box
-  };
 
-  const H4style = {
-    gridColumn: '2',
-    width: '100%',
-    display: 'grid',
-    gridTemplateRows: '1fr 1fr',
-    height: '100%',
-    fontSize: '13px',
-    textAlign: 'center',
-    fontFamily: GlobalFont,
-    background: PrimaryColour,
-    fontWeight: '100',
-    color: 'orange',
-    padding: '0',
-    boxSizing: 'border-box',
-  };
 
-  const boxStyle = {
-    color: 'white',
-    display: 'flex',
-    flexDirection: 'column',
-    backgroundColor: PrimaryColour,
-    // backgroundColor: "grey",
 
-    textAlign: 'center',
-    margin: '0 10px',
-    fontFamily: GlobalFont,
-    boxSizing: 'border-box',
-    borderRadius: '15px', // Added border-radius to the entire box
-  };
 
-  const imageBox = {
-    position: 'relative',
-    height: '100%',
-    width: '100%',
-    display: 'grid',
-    paddingBottom: '18px',
-    gridTemplateColumns: '79px auto',
-    gridTemplateRows: '1',
-  };
 
-  const containerStyle = {
-    padding: '10px',
-    fontFamily: GlobalFont,
-  };
 
-  const quoteStyle = {
-    left: '0',
-    top: '0',
-    margin: '0',
-    paddingTop: '5px',
-    paddingLeft: '5px',
-    paddingBottom: '3px',
-    textAlign: 'left',
-    background: PrimaryColour,
-    borderRadius: '15px 15px 0 0', // Added border-radius to the quote box
-  };
+  const myColor ="#94BBC0";
 
-  const clientName = {
-    bottom: '0',
-    margin: '0',
-    fontSize: '18px',
-    color: 'white',
-    padding: '0',
-    textAlign: 'left',
-    alignSelf: 'flex-end',
-    background: PrimaryColour,
-  };
 
-  const clientSuburb = {
-    margin: '0',
-    padding: '0',
-    color: 'white',
-    textAlign: 'left',
-    background: PrimaryColour,
-  };
+
+
+
+
+
 
   return (
-    <div style={containerStyle}>
-      <SectionHeading globalFont={GlobalFont} PrimaryColour={PrimaryColour}>
+    <Container globalFont={GlobalFont}>
+      <SectionHeading globalFont={GlobalFont} PrimaryColour={PrimaryColour} className="SubHeading">
         Here's What People Are Saying About Us
       </SectionHeading>
       <Carousel responsive={responsive}>
-        <div style={boxStyle}>
-          <div style={quoteStyle}>
-            <img src={quote} alt="quote" style={quoteStyle} />
-          </div>
-          <div style={{ ...textStyle }} ref={el => boxRefs.current[0] = el}>
-            The fence looks great! The guys did a fantastic job, and you were far and away the most professional company we dealt with in seeking quotes. We’ll definitely be recommending Eastside to anyone who needs fence work done.
-          </div>
-          <div style={imageBox}>
-            <img src={image1} alt="Image 1" style={imageStyle} />
-            <div style={H4style}>
-              <p style={clientName}>MARK F</p>
-              <p style={clientSuburb}>Blackburn</p>
-            </div>
-          </div>
-        </div>
+        <Box PrimaryColour={myColor} globalFont={GlobalFont}>
+          <QuoteBox PrimaryColour={myColor}>
+            <img src={quote} alt="quote" />
+          </QuoteBox>
+          <TextBox PrimaryColour={myColor} GlobalFont={GlobalFont} maxHeight={maxHeight} ref={el => boxRefs.current[0] = el}>
+          North East Fencing transformed our yard with their exceptional fencing work. Their team was professional, punctual, and meticulous, ensuring every detail was perfect. The quality of the materials and craftsmanship exceeded our expectations, creating a beautiful and durable fence. We couldn't be happier with the results and highly recommend North East Fencing for any fencing needs.          </TextBox>
+          <ImageBox>
+            <ImageStyle src={image1} alt="Image 1" />
+            <H4Style GlobalFont={GlobalFont} PrimaryColour={myColor}>
+              <ClientName PrimaryColour={myColor}>MARK F</ClientName>
+              <ClientSuburb PrimaryColour={myColor}>Blackburn</ClientSuburb>
+            </H4Style>
+          </ImageBox>
+        </Box>
 
-        <div style={boxStyle}>
-          <div style={quoteStyle}>
-            <img src={quote} alt="quote" style={quoteStyle} />
-          </div>
-          <div style={{ ...textStyle }} ref={el => boxRefs.current[1] = el}>
-            The fence looks great! The guys did a fantastic job, and you were far and away the most professional company we dealt with in seeking quotes. We’ll definitely be recommending Eastside to anyone who needs fence work done.  
-            blah.  take up extra lines.  see if box gets bigger.
-            quick brown fox.  yada yada yada.  more text here to make the box taller.  more crap to text 
- looks like it is working.  the whole thing is automated.  
-          </div>
-          <div style={imageBox}>
-            <img src={image2} alt="Image 2" style={imageStyle} />
-            <div style={H4style}>
-              <p style={clientName}>JANE T</p>
-              <p style={clientSuburb}>Mitcham</p>
-            </div>
-          </div>
-        </div>
 
-        <div style={boxStyle}>
-          <div style={quoteStyle}>
-            <img src={quote} alt="quote" style={quoteStyle} />
-          </div>
-          <div style={{ ...textStyle }} ref={el => boxRefs.current[2] = el}>
-            The .
-          </div>
-          <div style={imageBox}>
-            <img src={image1} alt="Image 1" style={imageStyle} />
-            <div style={H4style}>
-              <p style={clientName}>MARK F</p>
-              <p style={clientSuburb}>Blackburn</p>
-            </div>
-          </div>
-        </div> 
 
-        <div style={boxStyle}>
-          <div style={quoteStyle}>
-            <img src={quote} alt="quote" style={quoteStyle} />
-          </div>
-          <div style={{ ...textStyle }} ref={el => boxRefs.current[3] = el}>
-       f
-                 </div>
-          <div style={imageBox}>
-            <img src={image1} alt="Image 1" style={imageStyle} />
-            <div style={H4style}>
-              <p style={clientName}>MARK F</p>
-              <p style={clientSuburb}>Blackburn</p>
-            </div>
-          </div>
-        </div> 
+
+
+
+
+
+        <Box PrimaryColour={myColor} globalFont={GlobalFont}>
+          <QuoteBox PrimaryColour={myColor}>
+            <img src={quote} alt="quote" />
+          </QuoteBox>
+          <TextBox PrimaryColour={myColor} GlobalFont={GlobalFont} maxHeight={maxHeight} ref={el => boxRefs.current[1] = el}>
+          Robert and his team did an outstanding job on our new fence. Their professionalism, attention to detail, and quality craftsmanship were evident in every step of the process. The fence is not only sturdy and durable but also enhances the look of our yard. Highly recommend Robert for any fencing needs!          </TextBox>
+          <ImageBox>
+            <ImageStyle src={image2} alt="Image 2" />
+            <H4Style GlobalFont={GlobalFont} PrimaryColour={myColor}>
+              <ClientName PrimaryColour={myColor}>JANE T</ClientName>
+              <ClientSuburb PrimaryColour={myColor}>Mitcham</ClientSuburb>
+            </H4Style>
+          </ImageBox>
+        </Box>
+
+
+
+
+
+
+
+
+        <Box PrimaryColour={myColor} globalFont={GlobalFont}>
+          <QuoteBox PrimaryColour={myColor}>
+            <img src={quote} alt="quote" />
+          </QuoteBox>
+          <TextBox PrimaryColour={myColor} GlobalFont={GlobalFont} maxHeight={maxHeight} ref={el => boxRefs.current[2] = el}>
+          North East Fencing exceeded our expectations with their exceptional service and quality craftsmanship. From the initial consultation to the final installation, their team was professional, efficient, and attentive to every detail. Our new fence looks fantastic and adds significant value to our property. We highly recommend North East Fencing for any fencing needs!          </TextBox>
+          <ImageBox>
+            <ImageStyle src={image3} alt="Image 3" />
+            <H4Style GlobalFont={GlobalFont} PrimaryColour={myColor}>
+              <ClientName PrimaryColour={myColor}>MARK F</ClientName>
+              <ClientSuburb PrimaryColour={myColor}>Mitcham</ClientSuburb>
+            </H4Style>
+          </ImageBox>
+        </Box>
+
+
+
+
+
+
+
+
+        <Box PrimaryColour={myColor} globalFont={GlobalFont}>
+          <QuoteBox PrimaryColour={myColor}>
+            <img src={quote} alt="quote" />
+          </QuoteBox>
+          <TextBox PrimaryColour={myColor} GlobalFont={GlobalFont} maxHeight={maxHeight} ref={el => boxRefs.current[3] = el}>
+          North East Fencing did an outstanding job on our new fence. Their team was professional, prompt, and meticulous from start to finish. The quality of their workmanship is impressive, and the fence has added both beauty and value to our home. We highly recommend North East Fencing for top-notch fencing services          </TextBox>
+          <ImageBox>
+            <ImageStyle src={image4} alt="Image 4" />
+            <H4Style GlobalFont={GlobalFont} PrimaryColour={myColor}>
+              <ClientName PrimaryColour={myColor}>Francine W</ClientName>
+              <ClientSuburb PrimaryColour={myColor}>Box Hill</ClientSuburb>
+            </H4Style>
+          </ImageBox>
+        </Box>
+
+
+
+
+
+
+
+
       </Carousel>
-    </div>
+    </Container>
   );
 };
 
+
+
+
+
+
+
+
 export default QuoteCarousel;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

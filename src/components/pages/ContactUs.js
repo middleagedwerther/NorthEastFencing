@@ -1,58 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
 import '../../App.css';
-import FormSubmit from './FormSubmit';
-import bkgrnd from "../../images/amerifence.png";
+import bkgrnd from "../../images/holz4.jpg";
 
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMapMarkerAlt, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import EmailForm from './Formspree.js';
 
 
 import { useGlobals } from "../../Globals.js";
-import FooterWithIcon from './FooterWithIcon.js';
 import Accordion from "./SitePointAccordion.js";
 import FooterWithColumns from './FooterWithColumns.js';
 
-
-const ContactUsWrapper = styled.div`
-  display: grid;
-  justify-content: space-between;
-  margin-top: 50px;
-`;
-
-
-const ContactUsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 10px; /* Add gap between the items */
-`;
-
-
-const ContactDetailsItem = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-
-const ContactDetailsText = styled.p`
-  margin: 0 0 0 10px; /* Margin to the left of the text for spacing */
-`;
-
-
-const FormContainer = styled.div`
-  display: flex;
-  height: 450px;
-  width: 400px; /* Set the desired width for the form container */
-  padding: 20px;
-  background: ${(props) => props.primaryColour};
-  border-radius: 5px;
-  // border: 2px solid ${(props) => props.primaryColour};
-
-
-  @media screen and (max-width: 642px) {
-    width: 100%; /* Make the form container take full width on smaller screens */
-  }
+const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Adjust opacity and color as needed */
+  z-index: 0;
 `;
 
 
@@ -67,7 +32,8 @@ const PageContainer = styled.div`
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 
 
-  @media screen and (max-width: 642px) {
+  @media screen and (max-width: 900px) {
+  display:flex;
     flex-direction: column; /* Stack the children vertically on smaller screens */
     align-items: center; /* Center align the children */
   }
@@ -98,7 +64,8 @@ const Container = styled.div`
 
 const H1Wrapper = styled.span`
   display: inline-block;
-  background-color: ${(props) => props.primaryColour}; /* Set background color */
+  z-index:1;
+  // background-color: ${(props) => props.primaryColour}; 
   padding: 10px; /* Add some padding to the header */
   border-radius: 5px; /* Optional: add rounded corners */
 `;
@@ -128,6 +95,8 @@ const BackgroundImage = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
+    background-image: url(${bkgrnd});
+
   background-color: ${(props) => props.primaryColour}; /* Set background color */
   background-size: cover;
   background-position: center;
@@ -144,6 +113,7 @@ export default function ContactUs() {
     <>
       <Container primaryColour={PrimaryColour}>
         <BackgroundImage primaryColour={PrimaryColour} />
+        <Overlay/>
         <H1Wrapper primaryColour={PrimaryColour}>
           <H1 globalFont={GlobalFont}>Contact Us</H1>
         </H1Wrapper>
@@ -152,7 +122,7 @@ export default function ContactUs() {
 
       <PageContainer>
         <Accordion />
-        <FormSubmit />
+        <EmailForm />
       </PageContainer>
 
 

@@ -63,9 +63,6 @@ const Privacy = () => {
       <ContentContainer>
         <Heading globalFont={GlobalFont}>Privacy Policy</Heading>
         
-        <Paragraph globalFont={GlobalFont}>
-          Updated: 29/06/2022
-        </Paragraph>
 
         <Paragraph globalFont={GlobalFont}>
           North East Fencing ("we", "our", or "us") operates the North East Fencing website (the "Service"). This Privacy Policy outlines our practices regarding the collection, use, and disclosure of your Personal Information when you use our Service. We will not use or share your information with anyone except as described in this Privacy Policy. Your Personal Information is used to provide and improve the Service. By using the Service, you consent to the collection and use of information in accordance with this policy.

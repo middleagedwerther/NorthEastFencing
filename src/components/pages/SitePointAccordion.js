@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import data from "./SitePointAccordionData";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import styled from "styled-components";
-import { useGlobals } from "../../Globals.js"
+import { useGlobals } from "../../Globals.js";
 
 const SectionHeading = styled.div`
   justify-content: center;
@@ -10,10 +10,10 @@ const SectionHeading = styled.div`
   width: 100%;
   margin-top: 0;
   text-align: center;
-  font-size: 30px;
-  color: ${props => props.primaryColour};
+  font-size: ${(props) => props.globalFontSize};  // Use globalFontSize prop for font-size
+  color: ${(props) => props.primaryColour};
   margin-bottom: 0;
-  font-family: ${props => props.globalFont};
+  font-family: ${(props) => props.globalFont};
 `;
 
 // Styled components
@@ -50,9 +50,7 @@ const QuestionContainer = styled.button`
   font-family: ${(props) => props.fontFamily};
 
   &.active {
-    // color: ${(props) => props.primaryColour};
     color: black;
-
     background-image: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.04), transparent);
   }
 
@@ -63,6 +61,10 @@ const QuestionContainer = styled.button`
 
 const QuestionContent = styled.p`
   font-family: ${(props) => props.fontFamily};
+  //   text-align: left;
+  // font-size: 16px;
+  // letter-spacing: 1px;
+  // line-height: 1.5;
 `;
 
 const Arrow = styled(RiArrowDropDownLine)`
@@ -72,8 +74,7 @@ const Arrow = styled(RiArrowDropDownLine)`
   transition: 0.3s ease-in-out;
   &.active {
     transform: rotate(180deg);
-    // color: ${(props) => props.primaryColour};
-    color:black;
+    color: black;
   }
 `;
 
@@ -85,20 +86,23 @@ const AnswerContainer = styled.div`
 const AnswerContent = styled.p`
   padding: 1rem 0;
   font-size: 20px;
-  font-style: italic;
+  // font-style: italic;s
+   letter-spacing: 1px;
+  // line-height: 1.5;
+ 
   font-family: ${(props) => props.fontFamily};
 `;
 
 // AccordionItem component
 const AccordionItem = ({ question, answer, isOpen, onClick }) => {
   const contentHeight = useRef();
-  const { GlobalFont, PrimaryColour } = useGlobals();
+  const { GlobalFont } = useGlobals();
 
   return (
     <Wrapper>
-      <QuestionContainer className={isOpen ? "active" : ""} onClick={onClick} fontFamily={GlobalFont} primaryColour={PrimaryColour}>
+      <QuestionContainer className={isOpen ? "active" : ""} onClick={onClick} fontFamily={GlobalFont}>
         <QuestionContent fontFamily={GlobalFont}>{question}</QuestionContent>
-        <Arrow className={isOpen ? "active" : ""} primaryColour={PrimaryColour} />
+        <Arrow className={isOpen ? "active" : ""} />
       </QuestionContainer>
 
       <AnswerContainer
@@ -118,16 +122,15 @@ const AccordionItem = ({ question, answer, isOpen, onClick }) => {
 // Accordion component
 const Accordion = () => {
   const [activeIndex, setActiveIndex] = useState(null);
+  const { GlobalFont, PrimaryColour } = useGlobals();
 
   const handleItemClick = (index) => {
     setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
   };
 
-  const { GlobalFont, PrimaryColour } = useGlobals();
-
   return (
     <Parent>
-      <SectionHeading globalFont={GlobalFont} primaryColour={PrimaryColour}>FAQs</SectionHeading>
+      <SectionHeading globalFont={GlobalFont} className="SubHeading" primaryColour={PrimaryColour}>FAQs</SectionHeading>
 
       <Container>
         {data.map((item, index) => (
